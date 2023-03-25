@@ -93,6 +93,7 @@ public class PersonaController {
         return new ResponseEntity(new Mensaje("Persona actualizada"), HttpStatus.OK);
     }
 @PreAuthorize ("hasRole('ADMIN')")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") int id) {
 
         if (!personaService.existsById(id)) {
